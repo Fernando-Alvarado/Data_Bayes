@@ -11,11 +11,12 @@ theta_true = 0.3 ### valor verdadero
 
 ### Simular una muestra
 ### Likelihood   Binomial(y|size=1,theta) = Bernoulli(theta)  
-n = 10 ### tamaño de muestra 
+n = 100 ### tamaño de muestra 
 k = 1
 Xi = rbinom(n=n, size=1, prob=theta_true)
 
 (y = sum(Xi))
+y
 
 ### Prior   Beta(p|,a,b)
 a = 2   ### hiperparametro de Beta
@@ -26,6 +27,7 @@ p = seq(0,1,0.01)
 
 ### Posterior
 
+X11()
 	plot(p,dbeta(p,y+1,n-y+1), 
 	     main=paste0("Muestra Y=",y),xlab=expression(theta), ylab="Densidad", 
 	     lty=1, lwd=8, type="l", col="black")
@@ -40,7 +42,7 @@ p = seq(0,1,0.01)
 	
 	
 	### Predictiva  Prior & Posterior
-
+X11()
 	x = (0:k)
 	plot(x,dbetabinom.ab(x, size=1, shape1=a+sum(y), shape2=b+1*n-sum(y)), 
 	     main=paste0("Muestra suma Y=",sum(Xi)," media Y=",mean(Xi)),xlab="Y",ylab="Densidad",
