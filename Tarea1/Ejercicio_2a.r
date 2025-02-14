@@ -38,7 +38,7 @@ b_post <- b
 valores_theta <- seq(b_post, theta_real * 1.5, length.out = num)
 densidad_posterior <- (a_post * b_post^a_post) / (valores_theta^(a_post + 1))
 #Graficando la maxima verosimilitud ----------------------------------------------------------------- # nolint
-verosimulitd <- (1/theta_real)^num
+verosimulitd <- (1/theta_real)^n
 
 #Distribución predictiva inicial---------------------------------------------------------------------- # nolint: line_length_linter.
 z_values <- seq(b, theta_real * 1.5, length.out = num)
