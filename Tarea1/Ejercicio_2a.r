@@ -29,11 +29,6 @@ a_post <- a + n
 b_post <- b
 #b_post <- max(x) 
 
-
-
-
-
-
 # Graficando  la distribución posterior -------------------------------------------------------------- # nolint
 valores_theta <- seq(b_post, theta_real * 1.5, length.out = num)
 densidad_posterior <- (a_post * b_post^a_post) / (valores_theta^(a_post + 1))
